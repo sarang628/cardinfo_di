@@ -1,5 +1,6 @@
 package com.sarang.torang.di.cardinfo_di
 
+import android.util.Log
 import com.sarang.torang.di.repository.repository.impl.FindRepositoryImpl
 import com.sarang.torang.usecase.cardinfo.SetRestaurantUseCase
 import dagger.Module
@@ -14,6 +15,7 @@ class SetRestaurantUseCaseImpl {
     fun provideSetRestaurantUseCase(findRepository: FindRepositoryImpl): SetRestaurantUseCase {
         return object : SetRestaurantUseCase {
             override suspend fun invoke(restaurantId: Int) {
+                Log.d("__SetRestaurantUseCaseImpl", "selectRestaurant from card swipe restaurantId : ${restaurantId}")
                 findRepository.selectRestaurant(restaurantId)
             }
         }
