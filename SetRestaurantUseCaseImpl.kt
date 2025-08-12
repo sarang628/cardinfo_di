@@ -16,7 +16,7 @@ class SetRestaurantUseCaseImpl {
         return object : SetRestaurantUseCase {
             override suspend fun invoke(restaurantId: Int) {
                 Log.d("__SetRestaurantUseCaseImpl", "selectRestaurant from card swipe restaurantId : ${restaurantId}")
-                findRepository.selectRestaurant(restaurantId)
+                findRepository.selectRestaurantFromSwipe(restaurantId)
             }
         }
     }
