@@ -24,15 +24,15 @@ class GetRestaurantUseCaseImpl {
                 return findRepository.restaurants.map {
                     it.map { restaurant ->
                         RestaurantCardUIState(
-                            restaurantId = restaurant.restaurantId,
-                            restaurantName = restaurant.restaurantName,
-                            rating = restaurant.rating,
-                            foodType = restaurant.restaurantType,
-                            restaurantImage = BuildConfig.RESTAURANT_IMAGE_SERVER_URL + restaurant.imgUrl1,
-                            price = restaurant.prices,
+                            restaurantId = restaurant.restaurant.restaurantId,
+                            restaurantName = restaurant.restaurant.restaurantName,
+                            rating = restaurant.restaurant.rating,
+                            foodType = restaurant.restaurant.restaurantType,
+                            restaurantImage = BuildConfig.RESTAURANT_IMAGE_SERVER_URL + restaurant.restaurant.imgUrl1,
+                            price = restaurant.restaurant.prices,
                             distance = "",
-                            lat = restaurant.lat,
-                            lon = restaurant.lon
+                            lat = restaurant.restaurant.lat,
+                            lon = restaurant.restaurant.lon
                         )
                     }
                 }.stateIn(scope = coroutineScope, started = SharingStarted.Companion.Eagerly, initialValue = emptyList())

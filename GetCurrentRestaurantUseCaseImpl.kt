@@ -23,12 +23,12 @@ class GetCurrentRestaurantUseCaseImpl {
             override fun invoke(coroutineScope: CoroutineScope): StateFlow<RestaurantCardUIState> {
                 return findRepository.selectedRestaurant.map {
                     RestaurantCardUIState(
-                        restaurantId = it.restaurantId,
-                        restaurantName = it.restaurantName,
-                        rating = it.rating,
-                        foodType = it.restaurantType,
-                        restaurantImage = BuildConfig.RESTAURANT_IMAGE_SERVER_URL + it.imgUrl1,
-                        price = it.prices,
+                        restaurantId = it.restaurant.restaurantId,
+                        restaurantName = it.restaurant.restaurantName,
+                        rating = it.restaurant.rating,
+                        foodType = it.restaurant.restaurantType,
+                        restaurantImage = BuildConfig.RESTAURANT_IMAGE_SERVER_URL + it.restaurant.imgUrl1,
+                        price = it.restaurant.prices,
                         distance = ""
                     )
                 }.stateIn(scope = coroutineScope, started = SharingStarted.Companion.Eagerly, initialValue = RestaurantCardUIState())
