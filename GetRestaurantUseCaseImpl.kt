@@ -2,7 +2,7 @@ package com.sarang.torang.di.cardinfo_di
 
 import com.sarang.torang.BuildConfig
 import com.sarang.torang.compose.cardinfo.RestaurantCardUIState
-import com.sarang.torang.di.repository.repository.impl.FindRepositoryImpl
+import com.sarang.torang.di.repository.FindRepositoryImpl
 import com.sarang.torang.usecase.cardinfo.GetRestaurantUseCase
 import dagger.Module
 import dagger.Provides

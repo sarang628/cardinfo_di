@@ -1,7 +1,7 @@
 package com.sarang.torang.di.cardinfo_di
 
 import android.util.Log
-import com.sarang.torang.di.repository.repository.impl.FindRepositoryImpl
+import com.sarang.torang.di.repository.FindRepositoryImpl
 import com.sarang.torang.usecase.cardinfo.SetRestaurantUseCase
 import dagger.Module
 import dagger.Provides
